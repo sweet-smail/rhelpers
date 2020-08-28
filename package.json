@@ -13,8 +13,9 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rimraf lib",
+    "clean": "rimraf lib docs types",
     "build": "run-s clean prod",
+    "build:docs": "typedoc --out docs",
     "prod": "tsc --declarationDir types --declaration true && rollup -c",
     "dev": "yarn run clean && tsc -w",
     "test": "jest"
@@ -43,5 +44,6 @@
       "js",
       "ts"
     ]
-  }
+  },
+  "devDependencies": {}
 }

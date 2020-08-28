@@ -6,11 +6,11 @@ export default {
   output: [
     {
       file: 'lib/cjs.js',
-      format: 'cjs',
+      format: 'cjs', //commonjs node
     },
     {
       file: 'lib/esm.js',
-      format: 'esm',
+      format: 'esm', //es6
     },
     {
       file: 'lib/umd.js',
@@ -19,7 +19,7 @@ export default {
     },
     {
       file: 'lib/amd.js',
-      format: 'amd',
+      format: 'amd', //requirejs 定义得加载规范
     },
   ],
   plugins: [
