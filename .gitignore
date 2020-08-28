@@ -1,4 +1,6 @@
-dist
+
+lib
+types
 node_modules
 .cache
 .DS_Store
