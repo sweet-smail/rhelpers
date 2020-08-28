@@ -1,7 +1,7 @@
 import typescript from '@rollup/plugin-typescript';
-
+import path from 'path';
 export default {
-  input: '',
+  input: path.resolve(__dirname, 'src/index.ts'),
   external: ['react'],
   output: [
     {
@@ -9,7 +9,7 @@ export default {
       format: 'cjs',
     },
     {
-      file: 'lib/m.js',
+      file: 'lib/esm.js',
       format: 'esm',
     },
     {
@@ -22,5 +22,10 @@ export default {
       format: 'amd',
     },
   ],
-  plugins: [typescript()],
+  plugins: [
+    typescript({
+      exclude: 'node_modules/**',
+      typescript: require('typescript'),
+    }),
+  ],
 };

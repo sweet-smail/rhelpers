@@ -2,9 +2,9 @@
   "name": "rhelpers",
   "version": "0.0.2",
   "description": "richard 工具包",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "dist/index.js",
+  "main": "lib/cjs.js",
+  "types": "types/index.d.ts",
+  "module": "lib/esm.js",
   "author": "richard",
   "license": "MIT",
   "files": [
@@ -13,9 +13,9 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf lib",
     "build": "run-s clean prod",
-    "prod": "rollup -c",
+    "prod": "tsc --declarationDir types --declaration true && rollup -c",
     "dev": "yarn run clean && tsc -w",
     "test": "jest"
   },
